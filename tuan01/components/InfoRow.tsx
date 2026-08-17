@@ -1,42 +1,45 @@
-import { ScrollView, Text, View, StyleSheet } from "react-native";
-export default function InfoRow(){
-    return(
+import { View, Text, Image, StyleSheet } from "react-native";
+
+export default function InfoRow() {
+    return (
         <View style={styles.container}>
             <View style={styles.left}>
-                <Text>
-                    Hinh avatar
-                </Text>
+                <Image
+                    source={{ uri: "https://ui-avatars.com/api/?name=SV&background=E8F1FB&color=1D7FDB&bold=true" }}
+                    style={styles.avatar}
+                    resizeMode="cover"
+                />
             </View>
             <View style={styles.right}>
-                <Text style={styles.name}>
-                    Nguyen Minh Anh
-                </Text>
-                <Text style={styles.mssv}>
-                    Ma SV: 24NCTT001
-                </Text>
+                <Text style={styles.name}>Nguyễn Minh Anh</Text>
+                <Text style={styles.mssv}>Mã SV: 24CNTT001</Text>
             </View>
         </View>
-    )
+    );
 }
+
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
+        alignItems: "center",
         width: "100%",
-        color: "#1d7fdb",
         backgroundColor: "#ffffff",
         padding: 20,
-        
     },
-    left:{
-        width: "38%",
+    left: {
+        marginRight: 22,
+    },
+    avatar: {
+        width: 56,
+        height: 56,
+        borderRadius: 28,
     },
     right: {
-        width: "52%",
-    }, 
+        flex: 1,
+    },
     name: {
         fontSize: 16,
         fontWeight: "bold",
-        marginTop: 8,
         fontFamily: "Times New Roman",
     },
     mssv: {
@@ -44,5 +47,5 @@ const styles = StyleSheet.create({
         marginTop: 4,
         fontFamily: "Times New Roman",
         color: "#a3a3a3",
-    }
-})
+    },
+});

@@ -1,26 +1,40 @@
-import { StyleSheet, View, Text, TextInput } from "react-native";
-import { Course } from "../src/data/courses";
+import { StyleSheet, View, Text } from "react-native";
 
-interface ListHeaderComponentProps {
-  query: string;
-  setQuery: (value: string) => void;
-  filteredCourses: Course[];
-}
-
-export default function ListHeaderComponent({
-  query,
-  setQuery,
-  filteredCourses,
-}: ListHeaderComponentProps) {
+export default function ListEmptyComponent() {
   return (
     <View style={styles.emptyContainer}>
       <Text style={styles.emptyTitle}>
-            Không tìm thấy khóa học
+        Không tìm thấy khóa học
       </Text>
+
       <Text style={styles.emptyText}>
-            Không tìm thấy khóa học
+        Hãy thử tìm kiếm bằng một từ khóa khác
       </Text>
     </View>
   );
 }
 
+const styles = StyleSheet.create({
+  emptyContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 20,
+    paddingHorizontal: 16,
+    backgroundColor: "#f5f5f5",
+    borderRadius: 10,
+    margin: 10,
+  },
+
+  emptyTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 8,
+    color: "#333",
+  },
+
+  emptyText: {
+    fontSize: 14,
+    color: "#777",
+    textAlign: "center",
+  },
+});
